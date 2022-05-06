@@ -6,15 +6,17 @@ version: 2.1
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
   build-deploy:
-     machine: ubuntu
-  steps:
-     - checkout
-     - run:
-          sudo apt-get update
-          sudo apt install python3-pip
-          sudo pip3 install awsebcli --upgrade
-     - run:
-          aws --profile at-interviews \sts get-caller-identity 
-  workflows:
-      jobs:
-        - build_deploy
+     docker: 
+       -image: ubuntu  
+     steps:
+       - checkout
+       - run: 
+           name: Installing 'aws' cli
+           command:
+              sudo apt-get update
+              sudo apt install python3-pip
+              sudo pip3 install awsebcli --upgrade
+workflows:
+      build_and_deploy:
+        jobs:
+          - build-deploy
