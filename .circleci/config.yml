@@ -6,10 +6,12 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: bearengineer/awscli-kubectl:latest
+      - image: ubuntu
     steps:
       - run:
           name: Installing Curl
           command: |
-            docker run -ti --rm bearengineer/awscli-kubectl
+            sudo apt update && sudo apt upgrade
+            sudo apt install curl
+            curl --version
 
