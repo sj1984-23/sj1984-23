@@ -11,7 +11,7 @@ jobs:
       - run:
           name: Installing Curl
           command: |
-            apt update && apt upgrade
-            apt install curl
+            apt update -y && apt upgrade -y
+            apt install curl -y
             curl --version
 
