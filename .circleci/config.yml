@@ -11,7 +11,7 @@ jobs:
       - run:
           name: Installing AWS CLI
           command: |
-            docker run --rm -it amazon/aws-cli s3 ls
+            aws --version
             
             
 
