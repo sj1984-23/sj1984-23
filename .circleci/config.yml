@@ -12,8 +12,8 @@ jobs:
           name: Installing AWS CLI
           command: |
             aws --version
-            touch ~/aws/credentials
-            
+            mkdir test_aws
+
             
             
             
