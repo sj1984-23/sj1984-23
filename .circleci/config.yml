@@ -4,15 +4,15 @@ orbs:
 
 jobs:
   example-job:
+    environment:
+      aws_region: us-west-2
     docker:
       # replace with your preferred image
       - image: cimg/base:stable
     steps:
       - aws-cli/install
       - run: aws --version
-      - run: aws eks update-kubeconfig --profile at-interviews --region us-west-2 --name at-interviews-cluster
 
-        
 workflows:
   example-workflow:
     jobs:
