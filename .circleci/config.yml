@@ -9,8 +9,8 @@ jobs:
       - image: cimg/base:stable
     steps:
       - aws-cli/install
-      - aws-cli/setup:
-          aws-region: AWS_DEFAULT_REGION
+      - run: aws --version
+      - run: aws eks update-kubeconfig --profile at-interviews --region us-west-2 --name at-interviews-cluster
 
         
 workflows:
