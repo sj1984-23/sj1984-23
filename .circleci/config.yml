@@ -8,8 +8,11 @@ jobs:
       - image: cimg/base:stable
     steps:
       - aws-cli/install
-      - aws-cli/setup
-
+      - aws-cli/setup:
+          aws_region: us-west-2 
+          aws_secret_access_key: nDDOhBWpxkNdZ+EMmAZGY0DjtFYxNb2PfSQziS2o 
+          aws_access_key_id: AKIAUQOYV4M3JMIIQGNC
+   
 workflows:
   example-workflow:
     jobs:
