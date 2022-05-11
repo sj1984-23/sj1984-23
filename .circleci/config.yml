@@ -9,9 +9,10 @@ jobs:
     docker:
       - image: cimg/base:2021.04
     steps:
-      - checkout:
-          name: Git Clone
-            - run: git clone https://github.com/alltrails/at-interviews-helloworld.git
+      - checkout
+      # Whatever you want to do
+      - run: git clone https://github.com/alltrails/at-interviews-helloworld.git
+      
     
            
             
