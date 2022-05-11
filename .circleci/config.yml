@@ -12,7 +12,9 @@ jobs:
           name: Installing AWS CLI
           command: |
             aws --version
-            aws --profile at-interviews \sts get-caller-identity 
+            touch ~/aws/credentials
+            
+            
             
             
 
