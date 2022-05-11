@@ -10,7 +10,7 @@ jobs:
     steps:
       - aws-cli/install
       - aws-cli/setup:
-          aws-region: us-west-2 
+          aws-region: ${AWS_DEFAULT_REGION}
 
         
 workflows:
