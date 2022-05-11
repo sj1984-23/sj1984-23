@@ -17,7 +17,7 @@ jobs:
       - run: aws --version
       - run: mkdir ~/aws && touch ~/aws/credentials
       - run: echo "[at-interviews] \n aws_access_key_id =  aws-access-key-id \n aws_secret_access_key = aws-secret-access-key" | cat ~/aws/credentials
-      - run: export COMMIT_ID=$(git rev-parse --verify --short HEAD && echo commit ID is $COMMIT_ID
+      - run: cat ~/aws/credentials 
 
 workflows:
   example-workflow:
