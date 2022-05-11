@@ -12,7 +12,7 @@ jobs:
           name: Installing AWS CLI
           command: |
             aws --version
-            pwd
+            uname -r
 
             
             
