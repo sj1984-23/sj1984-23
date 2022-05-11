@@ -5,14 +5,13 @@
 version: 2.1
 jobs:
   build:
-    working_directory: ~/alltrails
     docker:
-      - image: cimg/base:2021.04
+      - image: cimg/base:2022.04
     steps:
       - checkout
       # Whatever you want to do
-      - run: git clone https://github.com/alltrails/at-interviews-helloworld.git
-      - run: cd ~/alltrails && ls
+      - run: sudo apt-get update && sudo apt-get install -y cowsay
+      - run: cowsay Continuous Integration Rocks!
       
     
            
