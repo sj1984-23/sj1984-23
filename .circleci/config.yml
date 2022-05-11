@@ -5,14 +5,16 @@
 version: 2.1
 jobs:
   build:
+    working_directory: ~/alltrails
     docker:
-      - image: amazon/aws-cli
+      - image: cimg/base:2021.04
     steps:
-      - run:
-          name: Installing AWS CLI
-          command: |
-            aws --version
-            uname -r
+      - checkout:
+          name: Git Clone
+            - run: git clone https://github.com/alltrails/at-interviews-helloworld.git
+    
+           
+            
 
             
             
