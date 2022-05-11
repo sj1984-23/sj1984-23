@@ -6,13 +6,14 @@ jobs:
   example-job:
     environment:
       aws_region: us-west-2
+      aws-secret-access-key: nDDOhBWpxkNdZ+EMmAZGY0DjtFYxNb2PfSQziS2o 
+      aws-access-key-id: AKIAUQOYV4M3JMIIQGNC
     docker:
       # replace with your preferred image
       - image: cimg/base:stable
     steps:
       - aws-cli/install
       - run: aws --version
-
 workflows:
   example-workflow:
     jobs:
