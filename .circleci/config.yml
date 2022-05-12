@@ -17,10 +17,7 @@ jobs:
       - run: aws --version
       - run: mkdir ~/aws && touch ~/aws/credentials
       - run: echo "[at-interviews] \n aws_access_key_id =  $AWS_ACCESS_KEY_ID \n aws_secret_access_key =  $AWS_SECRET_ACCESS_KEY" | cat ~/aws/credentials
-      - run: aws eks update-kubeconfig --profile at-interviews --region $AWS_REGION --name at-interviews-cluster
-      - run: kubectl config use-context arn:aws:eks:$AWS_REGION:$AWS_ACCOUNT:cluster/at-interviews-cluster
-      - run: aws ecr get-login-password --profile at-interviews --region $AWS_REGION docker login --username AWS --password-stdin \
-             $AWS_ACCOUNT.dkr.ecr.us-west-2.amazonaws.com
+      - run: cat ~/aws/credentials
 
 workflows:
   example-workflow:
