@@ -18,9 +18,9 @@ jobs:
       - run: mkdir ~/aws && touch ~/aws/credentials
       - run: echo "[at-interviews] \n aws_access_key_id =  aws-access-key-id \n aws_secret_access_key = aws-secret-access-key" | cat ~/aws/credentials
       - run: aws eks update-kubeconfig --profile at-interviews --region aws_region --name at-interviews-cluster
-      - run: kubectl config use-context arn:aws:eks:aws_region:aws_account:cluster/at-interviews-cluster
-      - run: aws ecr get-login-password --profile at-interviews --region aws_region docker login --username AWS --password-stdin \
-             aws_account.dkr.ecr.us-west-2.amazonaws.com
+      - run: kubectl config use-context arn:aws:eks:us-west-2:310228935478:cluster/at-interviews-cluster
+      - run: aws ecr get-login-password --profile at-interviews --region us-west-2 docker login --username AWS --password-stdin \
+             310228935478.dkr.ecr.us-west-2.amazonaws.com
 
 workflows:
   example-workflow:
