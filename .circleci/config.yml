@@ -16,8 +16,8 @@ jobs:
       - aws-cli/install
       - run: aws --version
       - run: mkdir ~/aws && touch ~/aws/credentials
-      - run: echo "[at-interviews] \n aws_access_key_id =  $AWS_ACCESS_KEY_ID \n aws_secret_access_key =  $AWS_SECRET_ACCESS_KEY" | cat ~/aws/credentials
-      - run: cat ~/aws/credentials
+      - run: echo $AWS_REGION
+
 
 workflows:
   example-workflow:
